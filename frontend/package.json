@@ -1,0 +1,9 @@
+{
+  "name": "ecomap-frontend-static",
+  "version": "2.0.0",
+  "private": true,
+  "description": "EcoMap multi-page HTML, CSS and JavaScript frontend served by Express",
+  "scripts": {
+    "start": "node -e \"console.log('Start the backend with: cd ../backend && npm start; then open http://localhost:5000')\""
+  }
+}

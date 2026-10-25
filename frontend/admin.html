@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#176b4d" />
+    <title>Admin panel | EcoMap</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html"
+        ><span class="brand-mark">🌿</span
+        ><span>EcoMap<small>Cleaner communities, together</small></span></a
+      ><button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+      <nav id="mainNav">
+        <a href="/index.html">Home</a><a href="/map.html">Explore map</a
+        ><a href="/report.html">Report an issue</a
+        ><a href="/dashboard.html">Dashboard</a><a href="/about.html">About</a
+        ><a href="/my-reports.html" id="myReportsLink">My reports</a
+        ><a href="/admin-login.html" class="nav-admin">Admin</a>
+        <a href="/login.html" id="authLink">Login / Register</a>
+      </nav>
+    </header>
+    <main class="page-wrap">
+      <section class="page-heading">
+        <span class="eyebrow">ADMINISTRATION</span>
+        <h1>Report management</h1>
+        <p>Review submitted reports and update their status.</p>
+        <button id="adminLogout" class="btn btn-light btn-small">
+          Log out
+        </button>
+      </section>
+      <section class="filter-bar">
+        <label
+          >Status<select id="adminFilterStatus">
+            <option value="">All statuses</option>
+            <option>Pending Review</option>
+            <option>Approved</option>
+            <option>In Progress</option>
+            <option>Resolved</option>
+            <option>Rejected</option>
+          </select></label
+        ><label class="search-label"
+          >Search<input id="adminSearch" placeholder="Search reports…" /></label
+        ><button class="btn btn-light btn-small" id="adminRefresh">
+          Refresh
+        </button>
+      </section>
+      <div id="adminMessage" class="form-message"></div>
+      <div id="adminReports" class="admin-list">
+        <p class="muted">Loading reports…</p>
+      </div>
+      <script src="/js/admin.js" defer></script>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="/index.html"
+          ><span class="brand-mark">🌱</span><span>EcoMap</span></a
+        >
+        <p>Small actions. Cleaner communities. A greener future.</p>
+      </div>
+      <span>© <span id="year"></span> EcoMap</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/common.js" defer></script>
+  </body>
+</html>

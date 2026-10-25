@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report an Issue | EcoMap</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet map styles -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+    
+<header class="site-header">
+    <a class="brand" href="/index.html">
+        <span class="brand-mark">🌿</span>
+        <span>
+            EcoMap
+            <small>Cleaner communities, together</small>
+        </span>
+    </a>
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        type="button"
+    >
+        ☰
+    </button>
+
+    <nav id="mainNav">
+        <a href="/index.html">Home</a>
+        <a href="/map.html">Explore map</a>
+        <a href="/report.html" class="active">Report an issue</a>
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/about.html">About</a>
+        <a href="/my-reports.html" id="myReportsLink">My reports</a>
+        <a href="/admin-login.html" class="nav-admin">Admin</a>
+        <a href="/login.html" id="authLink">Login / Register</a>
+    </nav>
+</header>
+
+
+    <main class="page-content">
+        <section class="page-heading">
+            <p class="eyebrow">COMMUNITY · ENVIRONMENT · ACTION</p>
+            <h1>Report an issue<span>.</span></h1>
+            <p class="page-description">
+                Help make your community cleaner by reporting an
+                environmental problem.
+            </p>
+        </section>
+
+        <section class="report-form-card">
+            <form id="reportForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="title">Report title</label>
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="e.g. Garbage near the park"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="Garbage Dumping">Garbage Dumping</option>
+                        <option value="Water Leakage">Water Leakage</option>
+                        <option value="Air Pollution">Air Pollution</option>
+                        <option value="Open Waste Burning">Open Waste Burning</option>
+                        <option value="Tree Damage/Cutting">Tree Damage/Cutting</option>
+                        <option value="Water Pollution">Water Pollution</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="4"
+                        placeholder="Describe the environmental issue..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="location_name">Location name or address</label>
+                    <input
+                        type="text"
+                        id="location_name"
+                        name="location_name"
+                        placeholder="e.g. Near the main park entrance"
+                    >
+                </div>
+
+                <!-- Interactive map -->
+                <div class="location-picker">
+                    <h2>Select issue location</h2>
+                    <p class="muted">
+                        Click the map to place a marker. You can drag
+                        the marker to adjust its position.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="useLocation"
+                        class="secondary-button"
+                    >
+                        ◎ Use my current location
+                    </button>
+
+                    <div id="reportMap"></div>
+
+                    <p
+                        id="mapLocationStatus"
+                        class="small muted"
+                        aria-live="polite"
+                    >
+                        No location selected yet. Click on the map.
+                    </p>
+                </div>
+
+                <div class="coordinate-grid">
+                    <div class="form-group">
+                        <label for="latitude">Latitude</label>
+                        <input
+                            type="number"
+                            id="latitude"
+                            name="latitude"
+                            step="any"
+                            placeholder="Selected from map"
+                            required
+                            readonly
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="longitude">Longitude</label>
+                        <input
+                            type="number"
+                            id="longitude"
+                            name="longitude"
+                            step="any"
+                            placeholder="Selected from map"
+                            required
+                            readonly
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Upload an image (optional)</label>
+                    <input
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                    <small class="muted">
+                        JPG, PNG, or WEBP. Maximum size: 2 MB.
+                    </small>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Submit report
+                </button>
+
+                <p id="reportMessage" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <strong>EcoMap</strong>
+        <span>Small actions. Cleaner communities.</span>
+    </footer>
+
+    <!-- Load Leaflet before the map script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Existing API helper functions -->
+    <script src="js/api.js"></script>
+
+    <!-- Report form and map behavior -->
+    <script src="js/report.js"></script>
+</body>
+</html>

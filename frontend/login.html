@@ -1,0 +1,129 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b4d">
+  <title>Login / Register | EcoMap</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/index.html">
+      <span class="brand-mark">🌿</span>
+      <span>EcoMap<small>Cleaner communities, together</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+    <nav id="mainNav">
+      <a href="/index.html">Home</a>
+      <a href="/map.html">Explore map</a>
+      <a href="/report.html">Report an issue</a>
+      <a href="/dashboard.html">Dashboard</a>
+      <a href="/about.html">About</a>
+      <a href="/my-reports.html" id="myReportsLink">My reports</a>
+      <a href="/admin-login.html" class="nav-admin">Admin</a>
+    </nav>
+  </header>
+
+  <main class="page-wrap">
+    <section class="auth-layout">
+      <div class="auth-intro">
+        <span class="eyebrow" id="introEyebrow">WELCOME BACK</span>
+        <h1 id="introTitle">Your reports, all in one place.</h1>
+        <p id="introDescription">
+          Log in to see the environmental reports connected to your account.
+        </p>
+      </div>
+
+      <section class="form-card auth-card">
+        <div class="auth-tabs" role="tablist" aria-label="Account access">
+          <button type="button" class="btn btn-primary"
+            id="loginTab" role="tab" aria-selected="true"
+            aria-controls="loginPanel">Login</button>
+
+          <button type="button" class="btn"
+            id="registerTab" role="tab" aria-selected="false"
+            aria-controls="registerPanel">Register</button>
+        </div>
+
+        <div id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+          <form id="loginForm">
+            <h2>User login</h2>
+
+            <label>
+              Email
+              <input name="email" type="email" required
+                autocomplete="email">
+            </label>
+
+            <label>
+              Password
+              <input name="password" type="password" required
+                autocomplete="current-password">
+            </label>
+
+            <button class="btn btn-primary btn-full" type="submit">
+              Log in →
+            </button>
+            <p class="form-message" id="loginMessage"
+              aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div id="registerPanel" role="tabpanel"
+          aria-labelledby="registerTab" hidden>
+          <form id="registerForm">
+            <h2>Create account</h2>
+
+            <label>
+              Name
+              <input name="name" type="text" maxlength="100"
+                required autocomplete="name">
+            </label>
+
+            <label>
+              Email
+              <input name="email" type="email" maxlength="255"
+                required autocomplete="email">
+            </label>
+
+            <label>
+              Password
+              <input name="password" type="password" minlength="8"
+                required autocomplete="new-password">
+              <small>At least 8 characters.</small>
+            </label>
+
+            <button class="btn btn-primary btn-full" type="submit">
+              Create account →
+            </button>
+            <p class="form-message" id="registerMessage"
+              aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand footer-brand" href="/index.html">
+        <span class="brand-mark">🌱</span><span>EcoMap</span>
+      </a>
+      <p>Small actions. Cleaner communities. A greener future.</p>
+    </div>
+    <span>© <span id="year"></span> EcoMap</span>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/js/api.js" defer></script>
+  <script src="/js/common.js" defer></script>
+  <script src="/js/auth.js" defer></script>
+  <script src="/js/auth-tabs.js" defer></script>
+</body>
+</html>

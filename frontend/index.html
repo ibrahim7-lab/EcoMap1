@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#176b4d" />
+    <title>Home | EcoMap</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html"
+        ><span class="brand-mark">🌿</span
+        ><span>EcoMap<small>Cleaner communities, together</small></span></a
+      ><button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+      <nav id="mainNav">
+        <a href="/index.html">Home</a><a href="/map.html">Explore map</a
+        ><a href="/report.html">Report an issue</a
+        ><a href="/dashboard.html">Dashboard</a><a href="/about.html">About</a
+        ><a href="/my-reports.html" id="myReportsLink">My reports</a
+        ><a href="/admin-login.html" class="nav-admin">Admin</a>
+        <a href="/login.html" id="authLink">Login / Register</a>
+      </nav>
+    </header>
+    <main class="page-wrap">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">COMMUNITY • ENVIRONMENT • ACTION</span>
+          <h1>Make your neighbourhood <em>greener.</em></h1>
+          <p>
+            Spot an environmental issue? Report it, locate it on the map, and
+            help your community track progress toward a cleaner place to live.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/report.html">＋ Report an issue</a
+            ><a class="btn btn-light" href="/map.html">Explore the map ↗</a>
+          </div>
+          <div class="hero-note">
+            <span class="dot"></span> Community reports. Visible progress.
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="art-circle"><span class="art-leaf">🌳</span></div>
+          <div class="float-card float-one">
+            ♻️
+            <span
+              ><b>Small actions</b><small>make a big difference</small></span
+            >
+          </div>
+          <div class="float-card float-two">
+            📍 <span><b>Local issues</b><small>mapped together</small></span>
+          </div>
+        </div>
+      </section>
+      <section class="stats-grid" id="homeStats">
+        <div class="stat-card">
+          <span class="stat-icon">📍</span
+          ><span class="stat-label">Public reports</span
+          ><strong id="statTotal">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🕓</span
+          ><span class="stat-label">Pending review</span
+          ><strong id="statPending">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">🛠️</span
+          ><span class="stat-label">In progress</span
+          ><strong id="statProgress">—</strong>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">✅</span
+          ><span class="stat-label">Resolved</span
+          ><strong id="statResolved">—</strong>
+        </div>
+      </section>
+      <section class="section-block">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TAKE A LOOK</span>
+            <h2>Recent community reports</h2>
+            <p>See the issues your community is bringing to light.</p>
+          </div>
+          <a class="text-link" href="/map.html">View all reports →</a>
+        </div>
+        <div class="report-grid" id="recentReports">
+          <p class="muted">Loading recent reports…</p>
+        </div>
+      </section>
+      <section class="callout">
+        <div>
+          <span class="eyebrow">YOUR COMMUNITY NEEDS YOU</span>
+          <h2>See something that needs attention?</h2>
+          <p>Share the location and details so it can be tracked.</p>
+        </div>
+        <a class="btn btn-white" href="/report.html">Create a report →</a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="/index.html"
+          ><span class="brand-mark">🌱</span><span>EcoMap</span></a
+        >
+        <p>Small actions. Cleaner communities. A greener future.</p>
+      </div>
+      <span>© <span id="year"></span> EcoMap</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/common.js" defer></script>
+    <script src="/js/home.js" defer></script>
+  </body>
+</html>

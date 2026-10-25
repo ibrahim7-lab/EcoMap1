@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#176b4d" />
+    <title>Admin login | EcoMap</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html"
+        ><span class="brand-mark">🌿</span
+        ><span>EcoMap<small>Cleaner communities, together</small></span></a
+      ><button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+      <nav id="mainNav">
+        <a href="/index.html">Home</a><a href="/map.html">Explore map</a
+        ><a href="/report.html">Report an issue</a
+        ><a href="/dashboard.html">Dashboard</a><a href="/about.html">About</a
+        ><a href="/my-reports.html" id="myReportsLink">My reports</a
+        ><a href="/admin-login.html" class="nav-admin">Admin</a>
+        <a href="/login.html" id="authLink">Login / Register</a>
+      </nav>
+    </header>
+    <main class="page-wrap">
+      <section class="auth-layout">
+        <div class="auth-intro">
+          <span class="eyebrow">ADMINISTRATION</span>
+          <h1>Welcome back, EcoMap admin.</h1>
+          <p>Sign in to review reports and update their progress.</p>
+        </div>
+        <form id="adminLoginForm" class="form-card auth-card">
+          <h2>Admin login</h2>
+          <label
+            >Username<input
+              name="username"
+              autocomplete="username"
+              required /></label
+          ><label
+            >Password<input
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required /></label
+          ><button class="btn btn-primary btn-full" type="submit">
+            Sign in →
+          </button>
+          <p id="adminLoginMessage" class="form-message" aria-live="polite"></p>
+          <p class="small muted">
+            Admin access is restricted to authorized project administrators.
+          </p>
+        </form>
+      </section>
+      <script src="/js/admin-login.js" defer></script>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="/index.html"
+          ><span class="brand-mark">🌱</span><span>EcoMap</span></a
+        >
+        <p>Small actions. Cleaner communities. A greener future.</p>
+      </div>
+      <span>© <span id="year"></span> EcoMap</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/common.js" defer></script>
+  </body>
+</html>

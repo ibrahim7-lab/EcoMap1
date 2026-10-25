@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#176b4d" />
+    <title>Explore map | EcoMap</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html"
+        ><span class="brand-mark">🌿</span
+        ><span>EcoMap<small>Cleaner communities, together</small></span></a
+      ><button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+      <nav id="mainNav">
+        <a href="/index.html">Home</a><a href="/map.html">Explore map</a
+        ><a href="/report.html">Report an issue</a
+        ><a href="/dashboard.html">Dashboard</a><a href="/about.html">About</a
+        ><a href="/my-reports.html" id="myReportsLink">My reports</a
+        ><a href="/admin-login.html" class="nav-admin">Admin</a>
+        <a href="/login.html" id="authLink">Login / Register</a>
+      </nav>
+    </header>
+    <main class="page-wrap">
+      <section class="page-heading compact-heading">
+        <span class="eyebrow">ISSUES AROUND US</span>
+        <h1>Explore the map</h1>
+        <p>Browse public environmental reports by location and status.</p>
+      </section>
+      <section class="filter-bar">
+        <label
+          >Category<select id="filterCategory">
+            <option value="">All categories</option>
+            <option>Garbage Dumping</option>
+            <option>Water Leakage</option>
+            <option>Air Pollution</option>
+            <option>Open Waste Burning</option>
+            <option>Tree Damage/Cutting</option>
+            <option>Water Pollution</option>
+            <option>Other</option>
+          </select></label
+        ><label
+          >Status<select id="filterStatus">
+            <option value="">All statuses</option>
+            <option>Pending Review</option>
+            <option>Approved</option>
+            <option>In Progress</option>
+            <option>Resolved</option>
+          </select></label
+        ><label class="search-label"
+          >Search<input
+            id="filterSearch"
+            placeholder="Title, description, location…" /></label
+        ><button class="btn btn-light btn-small" id="clearFilters">
+          Clear filters
+        </button>
+      </section>
+      <div
+        id="map"
+        class="map-canvas"
+        aria-label="Map of environmental reports"
+      ></div>
+      <section class="section-block map-results">
+        <div class="section-heading">
+          <div>
+            <h2>Reports</h2>
+            <p id="resultCount" class="muted">Loading reports…</p>
+          </div>
+          <a class="text-link" href="/report.html">＋ Add report</a>
+        </div>
+        <div id="mapReports" class="report-grid"></div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="/index.html"
+          ><span class="brand-mark">🌱</span><span>EcoMap</span></a
+        >
+        <p>Small actions. Cleaner communities. A greener future.</p>
+      </div>
+      <span>© <span id="year"></span> EcoMap</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/common.js" defer></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      defer
+    ></script>
+    <script src="/js/map.js" defer></script>
+  </body>
+</html>

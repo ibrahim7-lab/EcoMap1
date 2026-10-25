@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#176b4d" />
+    <title>About | EcoMap</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/index.html"
+        ><span class="brand-mark">🌿</span
+        ><span>EcoMap<small>Cleaner communities, together</small></span></a
+      ><button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        ☰
+      </button>
+      <nav id="mainNav">
+        <a href="/index.html">Home</a><a href="/map.html">Explore map</a
+        ><a href="/report.html">Report an issue</a
+        ><a href="/dashboard.html">Dashboard</a><a href="/about.html">About</a
+        ><a href="/my-reports.html" id="myReportsLink">My reports</a
+        ><a href="/admin-login.html" class="nav-admin">Admin</a>
+        <a href="/login.html" id="authLink">Login / Register</a>
+      </nav>
+    </header>
+    <main class="page-wrap">
+      <section class="page-heading">
+        <span class="eyebrow">ABOUT THE PROJECT</span>
+        <h1>Technology for a cleaner community.</h1>
+        <p>
+          EcoMap brings environmental issue reporting and location mapping into
+          one simple place.
+        </p>
+      </section>
+      <section class="content-grid">
+        <article class="content-card">
+          <span class="big-emoji">🌍</span>
+          <h2>Why EcoMap?</h2>
+          <p>
+            Local environmental problems can be hard to document and follow up
+            on. EcoMap helps people share clear reports and gives the community
+            a way to see where issues are happening.
+          </p>
+        </article>
+        <article class="content-card">
+          <span class="big-emoji">🧭</span>
+          <h2>Location matters</h2>
+          <p>
+            Reports can include coordinates and appear on an interactive map,
+            making it easier to understand where attention may be needed.
+          </p>
+        </article>
+        <article class="content-card">
+          <span class="big-emoji">🤝</span>
+          <h2>Progress together</h2>
+          <p>
+            Reports have statuses so visitors can follow public progress while
+            administrators review and update submissions.
+          </p>
+        </article>
+      </section>
+      <section class="content-card tech-card">
+        <h2>Built with understandable tools</h2>
+        <p>
+          HTML creates the pages, CSS styles them, and JavaScript handles forms
+          and API requests. Node.js and Express provide the backend, MySQL
+          stores data, and Leaflet powers the map.
+        </p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="/index.html"
+          ><span class="brand-mark">🌱</span><span>EcoMap</span></a
+        >
+        <p>Small actions. Cleaner communities. A greener future.</p>
+      </div>
+      <span>© <span id="year"></span> EcoMap</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="/js/api.js" defer></script>
+    <script src="/js/common.js" defer></script>
+  </body>
+</html>
