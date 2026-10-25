@@ -1,1 +1,12 @@
-(() => {const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const toggle=document.getElementById('menuToggle'),nav=document.getElementById('mainNav');if(toggle&&nav)toggle.addEventListener('click',()=>nav.classList.toggle('open'));const path=location.pathname;document.querySelectorAll('#mainNav a').forEach(a=>{if(a.getAttribute('href')===path)a.classList.add('active')});})();
+(() => {
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+  const toggle = document.getElementById("menuToggle"),
+    nav = document.getElementById("mainNav");
+  if (toggle && nav)
+    toggle.addEventListener("click", () => nav.classList.toggle("open"));
+  const path = location.pathname;
+  document.querySelectorAll("#mainNav a").forEach((a) => {
+    if (a.getAttribute("href") === path) a.classList.add("active");
+  });
+})();

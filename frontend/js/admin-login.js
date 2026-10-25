@@ -1,1 +1,21 @@
-document.addEventListener('DOMContentLoaded',()=>{const form=document.getElementById('adminLoginForm'),msg=document.getElementById('adminLoginMessage');form.addEventListener('submit',async e=>{e.preventDefault();msg.classList.remove('error');msg.textContent='Signing in…';const data=Object.fromEntries(new FormData(form));try{const result=await api('/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});localStorage.setItem('token',result.token);location.href='/admin.html'}catch(err){errorText(msg,err)}})});
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("adminLoginForm"),
+    msg = document.getElementById("adminLoginMessage");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.classList.remove("error");
+    msg.textContent = "Signing in…";
+    const data = Object.fromEntries(new FormData(form));
+    try {
+      const result = await api("/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      localStorage.setItem("token", result.token);
+      location.href = "/admin.html";
+    } catch (err) {
+      errorText(msg, err);
+    }
+  });
+});
